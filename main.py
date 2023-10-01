@@ -1,19 +1,21 @@
-from PySide6.QtWidgets import (QApplication, QWidget, 
-                               QVBoxLayout, QMainWindow, QLabel)
+from PySide6.QtWidgets import QApplication
 import sys
 from main_window import MainWindow
+from display import Display
+from variables import WINDOW_ICON_PATH
+from PySide6.QtGui import QIcon
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     window = MainWindow()
-    cw = QWidget()
-    v_layout = QVBoxLayout()
 
-    cw.setLayout(v_layout)
-    label1 = QLabel("Hello world")
-    v_layout.addWidget(label1)
-    window.setCentralWidget(cw)
+    icon = QIcon(str(WINDOW_ICON_PATH))
+    window.setWindowIcon(icon)
+
+    display = Display()
+    window.addToVLayout(display)
+    app.setWindowIcon(icon)
     window.show()
     
     app.exec()
