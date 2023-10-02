@@ -14,6 +14,7 @@ if __name__ == '__main__':
     window.setWindowIcon(icon)
 
     display = Display()
+    display.setPlaceholderText('Digite Algo')
     window.addToVLayout(display)
     app.setWindowIcon(icon)
     window.show()
