@@ -3,6 +3,7 @@ import sys
 from main_window import MainWindow
 from display import Display
 from variables import WINDOW_ICON_PATH
+from info import Info
 from PySide6.QtGui import QIcon
 
 if __name__ == '__main__':
@@ -13,9 +14,14 @@ if __name__ == '__main__':
     icon = QIcon(str(WINDOW_ICON_PATH))
     window.setWindowIcon(icon)
 
+    info = Info("Teste")
+    window.addToVLayout(info)
+    
     display = Display()
     display.setPlaceholderText('Digite Algo')
     window.addToVLayout(display)
+
+    
     app.setWindowIcon(icon)
     window.show()
     
