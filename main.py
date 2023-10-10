@@ -5,6 +5,7 @@ from display import Display
 from variables import WINDOW_ICON_PATH
 from info import Info
 from PySide6.QtGui import QIcon
+from botao import Button
 from styles import setupTheme
 
 if __name__ == '__main__':
@@ -21,6 +22,9 @@ if __name__ == '__main__':
     display = Display()
     display.setPlaceholderText('Digite Algo')
     window.addToVLayout(display)
+
+    button = Button('Text')
+    window.addToVLayout(button)
 
     
     app.setWindowIcon(icon)
